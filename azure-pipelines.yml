@@ -43,10 +43,6 @@ stages:
   displayName: 'Deploy the container'
   dependsOn: Build
   jobs:
-- stage: 'Deploy'
-  displayName: 'Deploy the containers'
-  dependsOn: Build
-  jobs:
   - deployment: Deploy
     displayName: Deploy
     pool:
