@@ -54,12 +54,6 @@ stages:
       runOnce:
         deploy:
           steps:
-          - task: AzureWebAppContainer@1
-            inputs:
-              appName: $(WebAppName)
-              azureSubscription: 'azure-conn'
-              imageName: $(RegistryName)/$(webRepository):$(build.buildId)
-
           - task: KubernetesManifest@0
             displayName: Create imagePullSecret
             inputs:
