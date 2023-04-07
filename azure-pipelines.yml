@@ -57,7 +57,7 @@ stages:
           - task: AzureWebAppContainer@1
             inputs:
               appName: $(WebAppName)
-              azureSubscription: 'Resource Manager - Tailspin - Space Game'
+              azureSubscription: 'Azure Pass - Sponsorship'
               imageName: $(RegistryName)/$(webRepository):$(build.buildId)
 
           - task: KubernetesManifest@0
@@ -65,7 +65,7 @@ stages:
             inputs:
               action: createSecret
               secretName: $(imagePullSecret)
-              dockerRegistryEndpoint: 'Container Registry Connection'
+              dockerRegistryEndpoint: 'adeyemiayodejidev'
               kubernetesServiceConnection: 'openshift-sandbox-adeyemi-ayodeji-dev-1680886609282'
               namespace: 'adeyemi-ayodeji-dev'
           
